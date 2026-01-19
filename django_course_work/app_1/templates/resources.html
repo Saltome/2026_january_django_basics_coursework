@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Resources</title>
 
     <link rel="stylesheet" href="{% static 'styles/resources.css' %}">
     <link rel="stylesheet" href="{% static 'styles/progress_bar.css' %}">
@@ -12,11 +12,12 @@
 <body
     data-update-url="{% url 'resource_time_update' %}"
     data-initial-time="{{ time }}"
+    data-initial-land="{{ land }}"
     data-initial-progress="{{ progress }}"
 >
 
     <p data-bind="time">{{ time }}</p>
-
+    <p data-bind="land">{{ land }}</p>
     <div class="progress-container"
          data-progress="progress"
          style="--progress: {{ progress }}%;">
@@ -24,7 +25,6 @@
     </div>
 
     <h3>
-        Progress:
         <span data-bind="progress">{{ progress }}</span>%
     </h3>
 

@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll("[data-bind]").forEach(el => {
                 const key = el.dataset.bind;
                 if (key in state) {
-                    el.textContent = state[key];
+                    el.textContent = key + ": " + state[key];
                 }
             });
         });
@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const store = createStore({
         time: body.dataset.initialTime,
+        land: body.dataset.initialLand,
         progress: parseInt(body.dataset.initialProgress, 10)
     });
 
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 store.set({
                     time: parseInt(data.time),
+                    land: parseInt(data.land),
                     progress: parseInt(data.progress)
                 });
             })

@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.view_time, name='resource_time'),
+    path('resource_time_update/', views.update_resource, name='resource_time_update'),
 ]

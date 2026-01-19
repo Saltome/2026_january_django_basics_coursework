@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<link rel='stylesheet' type='text/css' href='{% static "styles\resources.css" %}'>
+<p id='time'>{{ time.value }}</p>
+<script>setInterval(function(){
+        fetch('{% url 'resource_time_update' %}')
+        .then(response => response.text())
+        .then(data => document.getElementById('time').innerHTML = data)
+        }
+    ,
+    1000)
+</script>
+</body>
+</html>

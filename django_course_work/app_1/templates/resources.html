@@ -3,18 +3,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/resources.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/progress_bar.css' %}">
 </head>
-<body>
-<link rel='stylesheet' type='text/css' href='{% static "styles\resources.css" %}'>
-<p id='time'>{{ time.value }}</p>
-<script>setInterval(function(){
-        fetch('{% url 'resource_time_update' %}')
-        .then(response => response.text())
-        .then(data => document.getElementById('time').innerHTML = data)
-        }
-    ,
-    1000)
-</script>
+<body data-update-url="{% url 'resource_time_update' %}">
+
+<p id="time">{{ time }}</p>
+
+<div id="time_progress_bar" class="progress-container" style="--progress: {{ progress }}%;">
+    <div class="progress-bar"></div>
+</div>
+
+<h3 id="progress-text">Progress: {{ progress }}%</h3>
+
+<script src="{% static 'js/resources.js' %}"></script>
 </body>
 </html>

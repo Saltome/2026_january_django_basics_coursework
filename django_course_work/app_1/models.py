@@ -1,4 +1,4 @@
 from django.db import models
 
 class Time(models.Model):
-    value = models.IntegerField(default=0)
+    value = models.FloatField(default=0)

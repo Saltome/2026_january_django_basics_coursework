@@ -1,14 +1,19 @@
 .progress-container {
-            width: 10%;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            overflow: hidden;
-            height: 20px;
-        }
+    width: 10%;
+    max-width: 400px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+}
 
 .progress-bar {
-    width: var(--progress, 0%);
     height: 20px;
-    background-color: #4caf50;
+    width: var(--progress, 0%);
+    background: linear-gradient(
+        90deg,
+        #ff8fb1,
+        #ffb3c7
+    );
     transition: width 0.1s ease;
 }

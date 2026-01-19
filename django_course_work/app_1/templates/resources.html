@@ -4,19 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/resources.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/progress_bar.css' %}">
+
+    <link rel="stylesheet" href="{% static 'styles/resources.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/progress_bar.css' %}">
 </head>
-<body data-update-url="{% url 'resource_time_update' %}">
 
-<p id="time">{{ time }}</p>
+<body
+    data-update-url="{% url 'resource_time_update' %}"
+    data-initial-time="{{ time }}"
+    data-initial-progress="{{ progress }}"
+>
 
-<div id="time_progress_bar" class="progress-container" style="--progress: {{ progress }}%;">
-    <div class="progress-bar"></div>
-</div>
+    <p data-bind="time">{{ time }}</p>
 
-<h3 id="progress-text">Progress: {{ progress }}%</h3>
+    <div class="progress-container"
+         data-progress="progress"
+         style="--progress: {{ progress }}%;">
+        <div class="progress-bar"></div>
+    </div>
 
-<script src="{% static 'js/resources.js' %}"></script>
+    <h3>
+        Progress:
+        <span data-bind="progress">{{ progress }}</span>%
+    </h3>
+
+    <script src="{% static 'js/micro_react.js' %}"></script>
 </body>
 </html>

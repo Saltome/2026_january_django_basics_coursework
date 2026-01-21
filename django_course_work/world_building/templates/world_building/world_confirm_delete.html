@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Delete {{ world.name }}{% endblock %}
+
+{% block content %}
+<div class="world-card">
+  <h1>Delete {{ world.name }}?</h1>
+  <p>Are you sure you want to permanently delete this world?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, delete</button>
+    <a href="{% url 'world-detail' world.pk %}">Cancel</a>
+  </form>
+</div>
+{% endblock %}

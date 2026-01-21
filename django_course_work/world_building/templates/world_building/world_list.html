@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}World List{% endblock %}
+
+{% block content %}
+<h1>Worlds</h1>
+<a href="{% url 'world-create' %}">Create new world</a>
+
+{% if worlds %}
+  {% for world in worlds %}
+    <div class="world-card">
+      <a href="{% url 'world-detail' world.pk %}">{{ world.name }}</a>
+    </div>
+  {% endfor %}
+{% else %}
+  <p>No worlds yet.</p>
+{% endif %}
+{% endblock %}

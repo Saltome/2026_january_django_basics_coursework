@@ -1,0 +1,92 @@
+/* === Dark Mode Base === */
+
+:root {
+    --bg-color: #1e1e2f;
+    --card-bg: #2a2a3f;
+    --text-color: #f0f0f5;
+    --accent-color: #ff6f91;
+    --link-color: #ff6f91;
+    --link-hover: #ffa3b1;
+    --border-color: #444466;
+    --font-family: 'Verdana', sans-serif;
+}
+
+/* Global body and text */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
+}
+
+/* Forms */
+form {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+input, textarea, select, button {
+    font-family: var(--font-family);
+    padding: 0.5rem;
+    margin: 0.3rem 0;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: #3a3a50;
+    color: var(--text-color);
+}
+
+/* Buttons */
+button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--link-hover);
+}
+
+/* Lists */
+ul {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Cards for world items */
+.world-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Links inside cards */
+.world-card a {
+    color: var(--accent-color);
+}

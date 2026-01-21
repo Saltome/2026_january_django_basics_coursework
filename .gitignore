@@ -1,2 +1,4 @@
 /django_course_work/app_1/migrations/
+/django_course_work/world_building/migrations/
+*/db.sqlite3
 /.idea

@@ -4,8 +4,9 @@
 
 {% block content %}
 <div class="world-card">
-  <h1>{{ world.name }}</h1>
-  <p>{{ world.description }}</p>
+  <h1>Name: {{ world.name }}</h1>
+  <p>Seed: {{world.seed}}</p>
+  <p>Description: {{ world.description }}</p>
   <a href="{% url 'world-update' world.pk %}">Edit</a>
   <a href="{% url 'world-delete' world.pk %}">Delete</a>
   <a href="{% url 'world-list' %}">Back to Worlds</a>

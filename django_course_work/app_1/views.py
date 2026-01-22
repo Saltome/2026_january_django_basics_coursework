@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Time, Land
 from django.http import JsonResponse
+from django.conf import settings
 
 
 def view_resources(request):
@@ -20,3 +21,12 @@ def update_resource(request):
         "land": land.value,
         "progress": 100 * (time.value%1)
     })
+
+
+
+def home(request):
+    return render(
+        request,
+        "home.html",
+        {"apps": settings.PROJECT_APPS.values()},
+    )

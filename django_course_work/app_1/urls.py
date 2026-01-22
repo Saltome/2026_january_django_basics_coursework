@@ -23,5 +23,6 @@ urlpatterns = [
     path('idle-game', views.view_resources, name='view_resources'),
     path('resource_time_update/', views.update_resource, name='resource_time_update'),
     path('world-building/', include('world_building.urls')),
-    path('', include('world_building.urls')),
+    # path('', include('world_building.urls')),
+    path('', views.home, name='home'),
 ]

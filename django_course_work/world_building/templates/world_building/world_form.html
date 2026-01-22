@@ -9,14 +9,36 @@
   <h1>{% if form.instance.pk %}Edit{% else %}Create{% endif %} World</h1>
   <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save</button>
 
-    {% if form.instance.pk %}
-      <a href="{% url 'world-detail' form.instance.pk %}">Cancel</a>
-    {% else %}
-      <a href="{% url 'world-list' %}">Cancel</a>
-    {% endif %}
+    <div class="form-field">
+      <label for="{{ form.seed.id_for_label }}">Seed:</label>
+      {{ form.seed }}
+      <button type="button" id="random-seed-btn">Random Seed 🎲</button>
+    </div>
+
+    <div class="form-field">
+      <label for="{{ form.name.id_for_label }}">Name:</label>
+      {{ form.name }}
+    </div>
+
+    <div class="form-field">
+      <label for="{{ form.description.id_for_label }}">Description:</label>
+      {{ form.description }}
+    </div>
+
+    <div class="form-actions">
+      <button type="submit">Save</button>
+      {% if form.instance.pk %}
+        <a href="{% url 'world-detail' form.instance.pk %}">Cancel</a>
+      {% else %}
+        <a href="{% url 'world-list' %}">Cancel</a>
+      {% endif %}
+    </div>
   </form>
 </div>
+{% endblock %}
+
+{% block extra_head %}
+{% load static %}
+<script src="{% static 'world_building/js/world_form.js' %}"></script>
 {% endblock %}

@@ -13,5 +13,5 @@ world_urlpatterns = [
 ]
 
 urlpatterns = [
-    path('status', status, name='world-building-status'),
+    path('status/', status, name='world-building-status'),
 ] + world_urlpatterns

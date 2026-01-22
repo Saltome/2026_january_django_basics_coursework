@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}World Builder{% endblock %}</title>
+    <title>{% block title %}Project Hub{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
     {% block extra_head %}{% endblock %}
 </head>
 <body>
+
+    <div class="global-nav">
+        <a href="{% url 'home' %}">← Project Hub</a>
+    </div>
+
     {% block content %}{% endblock %}
+
 </body>
 </html>

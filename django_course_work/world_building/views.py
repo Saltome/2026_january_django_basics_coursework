@@ -2,12 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
+from django.http import JsonResponse
 
 def status(request):
-    return HttpResponse(
-        "World Building app is running.",
-        content_type="text/plain"
-    )
+    return JsonResponse({"status": "ok"})
 
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import World

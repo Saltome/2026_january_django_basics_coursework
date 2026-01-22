@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Hub</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block title %}Project Hub{% endblock %}
+
+{% block content %}
+<h1>Project Hub</h1>
+
+<ul>
+  {% for app in apps %}
+    <li>
+      <a href="{{ app.url }}">{{ app.name }}</a><br>
+      <small>{{ app.description }}</small>
+    </li>
+  {% empty %}
+    <li><em>No applications available.</em></li>
+  {% endfor %}
+</ul>
+{% endblock %}
+
+
+</body>
+</html>

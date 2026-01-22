@@ -30,8 +30,22 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-PROJECT_APPS =["app_1",
-               "world_building"]
+# PROJECT_APPS =["app_1",
+#                "world_building"]
+PROJECT_APPS = {
+    "world_building": {
+        "name": "World Builder",
+        "url": "/world-building/",
+        "description": "Create and manage procedural worlds",
+    },
+    "app_1": {
+        "name": "Idle Game",
+        "url": "/idle-game",
+        "description": "Resource simulation experiment",
+    },
+}
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-] + PROJECT_APPS
+    *PROJECT_APPS.keys()
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -117,4 +132,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
-# STATICFILES_DIRS = [BASE_DIR / 'app_1/styles']

@@ -10,6 +10,9 @@ world_urlpatterns = [
     path('<int:pk>/', views.world_detail, name='world-detail'),
     path('<int:pk>/edit/', views.world_update, name='world-update'),
     path('<int:pk>/delete/', views.world_delete, name='world-delete'),
+    path("generate-name/", views.generate_world_name_view,name="generate-world-name"
+),
+
 ]
 
 urlpatterns = [

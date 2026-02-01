@@ -40,5 +40,8 @@
 
 {% block extra_head %}
 {% load static %}
+<script>
+  const GENERATE_WORLD_NAME_URL = "{% url 'generate-world-name' %}";
+</script>
 <script src="{% static 'world_building/js/world_form.js' %}"></script>
 {% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Entity{% endblock %}
+
+{% block content %}
+<div class="world-card">
+  <h1>Delete Political Entity</h1>
+
+  <p>Are you sure you want to delete <strong>{{ entity.name }}</strong>?</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-actions">
+      <button type="submit">Yes, delete</button>
+      <a href="{% url 'political-entity-detail' entity.pk %}">
+        Cancel
+      </a>
+    </div>
+  </form>
+</div>
+{% endblock %}

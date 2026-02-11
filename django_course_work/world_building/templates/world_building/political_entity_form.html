@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% if form.instance.pk %}Edit Entity{% else %}Create Entity{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="world-card">
+  <h1>
+    {% if form.instance.pk %}
+      Edit Political Entity
+    {% else %}
+      Create Political Entity
+    {% endif %}
+  </h1>
+
+  <form method="post">
+    {% csrf_token %}
+
+    <div class="form-field">
+      {{ form.as_p }}
+    </div>
+
+    <div class="form-actions">
+      <button type="submit">Save</button>
+
+      {% if form.instance.pk %}
+        <a href="{% url 'political-entity-detail' form.instance.pk %}">
+          Cancel
+        </a>
+      {% else %}
+        <a href="{% url 'world-detail' world.pk %}">
+          Cancel
+        </a>
+      {% endif %}
+    </div>
+  </form>
+</div>
+{% endblock %}

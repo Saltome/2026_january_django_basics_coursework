@@ -4,11 +4,30 @@
 
 {% block content %}
 <div class="world-card">
-  <h1>Name: {{ world.name }}</h1>
-  <p>Seed: {{world.seed}}</p>
-  <p>Description: {{ world.description }}</p>
-  <a href="{% url 'world-update' world.pk %}">Edit</a>
-  <a href="{% url 'world-delete' world.pk %}">Delete</a>
-  <a href="{% url 'world-list' %}">Back to Worlds</a>
+    <h1>Name: {{ world.name }}</h1>
+    <p>Seed: {{world.seed}}</p>
+    <p>Description: {{ world.description }}</p>
+    <a href="{% url 'world-update' world.pk %}">Edit</a>
+    <a href="{% url 'world-delete' world.pk %}">Delete</a>
+    <a href="{% url 'world-list' %}">Back to Worlds</a>
+    <h2>Political Entities</h2>
+    <a href="{% url 'political-entity-create' world.pk %}">
+      Add Political Entity
+    </a>
+
+    <ul>
+      {% for entity in world.political_entities.all %}
+        <li>
+          <a href="{% url 'political-entity-detail' entity.pk %}">
+            {{ entity.name }}
+          </a>
+          — {{ entity.government_type }}
+          — Power: {{ entity.power_level }}
+        </li>
+      {% empty %}
+        <li>No entities generated yet.</li>
+      {% endfor %}
+    </ul>
+
 </div>
 {% endblock %}

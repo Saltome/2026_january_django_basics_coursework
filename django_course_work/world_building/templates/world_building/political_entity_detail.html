@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{ entity.name }}{% endblock %}
+
+{% block content %}
+<div class="world-card">
+  <h1>{{ entity.name }}</h1>
+
+  <p><strong>World:</strong>
+    <a href="{% url 'world-detail' entity.world.pk %}">
+      {{ entity.world.name }}
+    </a>
+  </p>
+
+  <p><strong>Government:</strong> {{ entity.government_type }}</p>
+  <p><strong>Dominant Trait:</strong> {{ entity.dominant_trait }}</p>
+  <p><strong>Power Level:</strong> {{ entity.power_level }}</p>
+
+  {% if entity.description %}
+    <p><strong>Description:</strong></p>
+    <p>{{ entity.description }}</p>
+  {% endif %}
+
+  <div class="form-actions">
+    <a href="{% url 'political-entity-update' entity.pk %}">Edit</a>
+    <a href="{% url 'political-entity-delete' entity.pk %}">Delete</a>
+    <a href="{% url 'world-detail' entity.world.pk %}">Back to World</a>
+  </div>
+</div>
+{% endblock %}

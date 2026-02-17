@@ -25,5 +25,6 @@ urlpatterns = [
     path('world-building/', include('world_building.urls')),
     path('generators/', include('generators.urls')),
     # path('', include('world_building.urls')),
+    path("tilemap/", include("tilemap.urls")),
     path('', views.home, name='home'),
 ]

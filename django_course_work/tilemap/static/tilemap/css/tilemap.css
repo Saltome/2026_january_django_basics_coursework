@@ -1,0 +1,18 @@
+#tilemap-container {
+    display: inline-block;
+}
+
+.tile-row {
+    display: flex;
+}
+
+.tile {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #444;
+    background-color: #2b2b2b;
+}
+
+.tile.active {
+    background-color: #7c4dff;
+}

@@ -46,6 +46,11 @@ PROJECT_APPS = {
         "url": "/generators/",
         "description": "Generators interface.",
     },
+    "tilemap": {
+        "name": "Tilemap",
+        "url": "/tilemap/",
+        "description": "Tilemap interface.",
+    },
 }
 
 INSTALLED_APPS = [

@@ -69,7 +69,7 @@ def fractal_noise(x, y, seed, octaves=4, persistence=0.5, lacunarity=2.0):
     return total / max_value
 
 
-def generate_heightmap(width, height, seed, scale=10.0):
+def generate_heightmap(width, height, seed, scale=13.1):
     heightmap = []
 
     for y in range(height):
@@ -78,7 +78,7 @@ def generate_heightmap(width, height, seed, scale=10.0):
             nx = x / scale
             ny = y / scale
 
-            value = fractal_noise(nx, ny, seed, octaves=4, persistence=2.0, lacunarity=1.3)
+            value = fractal_noise(nx, ny, seed, octaves=4, persistence=3.0, lacunarity=1.3)
 
             # # Increase contrast
             # value = value ** 1.6

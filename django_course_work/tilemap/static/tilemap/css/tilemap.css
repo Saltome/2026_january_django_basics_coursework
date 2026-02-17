@@ -1,4 +1,4 @@
-#tilemap-container {
+.tilemap {
     display: inline-block;
 }
 
@@ -13,6 +13,24 @@
     background-color: #2b2b2b;
 }
 
-.tile.active {
-    background-color: #7c4dff;
+/* Terrain colors */
+
+.tile-water {
+    background: #1e3a8a;
+}
+
+.tile-beach {
+    background: #eab308;
+}
+
+.tile-plains {
+    background: #22c55e;
+}
+
+.tile-hills {
+    background: #4d7c0f;
+}
+
+.tile-mountain {
+    background: #6b7280;
 }

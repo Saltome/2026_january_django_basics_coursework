@@ -10,6 +10,10 @@
     <a href="{% url 'world-update' world.pk %}">Edit</a>
     <a href="{% url 'world-delete' world.pk %}">Delete</a>
     <a href="{% url 'world-list' %}">Back to Worlds</a>
+    <a href="{% url 'world-tilemap' world.pk %}">
+      View Terrain Map
+    </a>
+
     <h2>Political Entities</h2>
     <a href="{% url 'political-entity-create' world.pk %}">
       Add Political Entity

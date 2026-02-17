@@ -1,13 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}Tilemap{% endblock %}
+{% block title %}{{ world.name }} Map{% endblock %}
 
 {% block content %}
-<div id="tilemap-container"></div>
+<h1>{{ world.name }} — Terrain Map</h1>
+<a href="{% url 'world-detail' world.pk %}">Back to World</a>
+<div>
+
+<div class="tilemap">
+  {% for row in tiles %}
+    <div class="tile-row">
+      {% for tile in row %}
+        <div class="tile tile-{{ tile.terrain }}"></div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>
+
 {% endblock %}
 
 {% block extra_head %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'tilemap/css/tilemap.css' %}">
-<script src="{% static 'tilemap/js/tilemap.js' %}"></script>
 {% endblock %}
